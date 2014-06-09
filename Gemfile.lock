@@ -68,8 +68,8 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.2)
     multi_xml (0.5.5)
+    mysql2 (0.3.16)
     netrc (0.7.7)
-    pg (0.17.1)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -130,7 +130,7 @@ DEPENDENCIES
   coffee-rails
   heroku
   jquery-rails
-  pg
+  mysql2
   rails
   rails_12factor
   sass-rails
