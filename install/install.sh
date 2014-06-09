@@ -22,3 +22,6 @@ ${RUBY_GEM} install bundler mysql2
 
 # 4. Create mysql user and database for showterm.
 mysql --user root --password < mysql_init.sql
+
+# 5. Setup rails db.
+rake db:setup
