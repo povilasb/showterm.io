@@ -12,14 +12,16 @@ USERNAME="$2"
 QUID=`id -u ${USERNAME}`
 QGID=`id -g ${USERNAME}`
 PID="/var/run/showterm.pid"
+RAILS_PATH=`which rails`
 
+set -x 
 exec \
 	start-stop-daemon \
 	--start \
-	--chdir "${WORKING_DIRECTORY}"
-	--exec "rails" \
+	--chdir "${WORKING_DIRECTORY}" \
+	--exec "${RAILS_PATH}" \
 	--chuid "${QUID}":"${QGID}" \
 	--background \
 	--pidfile "${PID}" \
 	--make-pidfile \
-	"$@" -- server
+	-- server
