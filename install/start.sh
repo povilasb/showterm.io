@@ -14,7 +14,7 @@ QGID=`id -g ${USERNAME}`
 PID="/var/run/showterm.pid"
 RAILS_PATH=`which rails`
 
-set -x 
+set -x
 exec \
 	start-stop-daemon \
 	--start \
