@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Debian packages neccessary for Showterm.io to run.
-PACKAGES="mysql-server ruby2.0 ruby2.0-dev gcc libc6-dev nodejs \
-	libmysqlclient-dev"
+PACKAGES="postgresql-9.1 postgresql-server-dev-9.1 ruby2.0 ruby2.0-dev gcc \
+	libc6-dev nodejs"
 APT_UNSTABLE="deb ftp://ftp.debian.org/debian/ unstable main contrib non-free"
 RUBY_GEM=gem2.0
 
@@ -17,11 +17,11 @@ sudo apt-get update
 # 2. Get debian packages.
 sudo apt-get install ${PACKAGES}
 
-# 3. Install neccessary ruby gems.
-${RUBY_GEM} install bundler mysql2
+# 3. Install ruby gems.
+${RUBY_GEM} install bundle
+bundle install
 
-# 4. Create mysql user and database for showterm.
-mysql --user root --password < mysql_init.sql
+# TODO: create postgresql database and user for showterm.
 
-# 5. Setup rails db.
-rake db:setup
+# 3. Setup rails db.
+rake2.0 db:setup
